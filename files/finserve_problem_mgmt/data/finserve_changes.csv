@@ -1,0 +1,15 @@
+change_id,title,ci_id,type,risk,implemented_at,implemented_by,status,description
+CHG0033,Notification service template update,CI-1067,Standard,Low,2025-12-20 10:00,Digital Channels,Completed,Updated email templates for year-end communications
+CHG0041,KYC service dependency upgrade,CI-1091,Standard,Medium,2026-01-05 09:00,Compliance Team,Completed,Upgraded identity verification SDK to v3.1
+CHG0042,Payment gateway batch reconciliation schedule,CI-1042,Standard,Low,2026-01-06 14:00,Payments Team,Completed,Configured weekly batch reconciliation job to run every Tuesday at 22:00 UTC. Job performs full transaction reconciliation with partner banks.
+CHG0048,Reporting engine month-end optimization,CI-1044,Standard,Medium,2026-01-08 11:00,BI Team,Completed,Optimized month-end report queries; increased query parallelism from 10 to 25 threads; shares connection pool with account-ledger via db-ledger-prod
+CHG0055,Account ledger connection pool resize,CI-1031,Standard,Medium,2026-01-10 08:00,Core Banking,Completed,Increased max_pool_size from 150 to 200 connections on db-ledger-prod
+CHG0060,Fraud model v1.9.2 deployment,CI-1055,Normal,Medium,2026-01-15 16:00,Risk & Compliance,Completed,Deployed updated fraud scoring model with improved false positive rate
+CHG0065,Web portal UI refresh,CI-1023,Standard,Low,2026-01-20 10:00,Digital Channels,Completed,Updated web portal CSS framework and dashboard layout
+CHG0070,Loan origination credit API integration,CI-1079,Normal,Medium,2026-01-25 14:00,Lending Team,Completed,Integrated new credit score API provider for loan applications
+CHG0078,Auth service v2.14.0 deployment,CI-1015,Normal,Medium,2026-01-12 10:00,Identity Team,Completed,Deployed auth-service v2.14.0 with new PKCE flow support. Updated JWT signing logic.
+CHG0079,Auth service v2.14.1 hotfix,CI-1015,Emergency,High,2026-01-26 09:00,Identity Team,Completed,Hotfix for JWT validation regression in v2.14.0. Patched token expiry check.
+CHG0085,Mobile API multi-region failover setup,CI-1088,Normal,High,2026-02-05 08:00,Mobile Team,Completed,"Enabled multi-region deployment for mobile-api in us-west-2 across AZ-a, AZ-b, and AZ-c"
+CHG0091,Auth service v2.14.2 deployment,CI-1015,Normal,Medium,2026-02-09 15:00,Identity Team,Completed,Auth service v2.14.2 with session management improvements. JWT signing key rotation included.
+CHG0095,Auth service v2.14.2 config patch,CI-1015,Standard,Low,2026-02-16 10:00,Identity Team,Completed,Configuration update for auth-service token cache TTL values
+CHG0102,Auth service v2.14.3 deployment,CI-1015,Normal,Medium,2026-03-02 08:00,Identity Team,Completed,Auth service v2.14.3 with OIDC compliance fixes and performance tuning

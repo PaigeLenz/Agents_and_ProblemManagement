@@ -1,0 +1,11 @@
+ci_id,ci_name,ci_type,tier,owner,version,infra,upstream_deps,downstream_deps,last_change,last_change_date,notes
+CI-1015,auth-service,Microservice,Tier-1,Identity Team,v2.14.3,EKS us-east-1,"CI-1042,CI-1088,CI-1023",,CHG0102,2026-03-02,OAuth2/OIDC provider; handles all user authentication flows
+CI-1023,web-portal,Web Application,Tier-1,Digital Channels,v5.8.1,CloudFront + EKS us-east-1,"CI-1015,CI-1042,CI-1031",,CHG0065,2026-01-20,Customer-facing internet banking portal
+CI-1031,account-ledger,Core Service,Tier-0,Core Banking,v3.2.0,EKS us-east-1 + RDS Aurora (db-ledger-prod),CI-1044,"CI-1042,CI-1023,CI-1088",CHG0055,2026-01-10,Master ledger of all customer accounts and balances; max_pool_size=200
+CI-1042,payment-gateway,Core Service,Tier-0,Payments Team,v4.1.7,EKS us-east-1,CI-1031,"CI-1023,CI-1088",CHG0042,2026-01-06,Processes all payment transactions; weekly batch reconciliation runs Tue 22:00 UTC (CHG0042)
+CI-1044,reporting-engine,Batch Service,Tier-2,BI Team,v2.0.4,EKS us-east-1 + RDS Aurora (db-ledger-prod),,CI-1031,CHG0048,2026-01-08,Generates regulatory and business reports; month-end batch runs 1st-3rd of each month; shares db-ledger-prod connection pool with account-ledger
+CI-1055,fraud-detection,ML Service,Tier-1,Risk & Compliance,v1.9.2,EKS us-east-1 + SageMaker,CI-1042,,CHG0060,2026-01-15,Real-time fraud scoring on payment transactions
+CI-1067,notification-service,Microservice,Tier-2,Digital Channels,v1.5.0,EKS us-east-1 + SES/SNS,,,CHG0033,2025-12-20,"Email, SMS, and push notification delivery"
+CI-1079,loan-origination,Business Application,Tier-1,Lending Team,v2.3.1,EKS us-east-1,"CI-1031,CI-1091",,CHG0070,2026-01-25,End-to-end loan application processing
+CI-1088,mobile-api,API Gateway,Tier-1,Mobile Team,v3.6.0,EKS us-east-1 + us-west-2 (multi-region),"CI-1015,CI-1042,CI-1031",,CHG0085,2026-02-05,"Backend for mobile banking app; multi-AZ in us-west-2 (AZ-a, AZ-b, AZ-c)"
+CI-1091,kyc-service,Microservice,Tier-1,Compliance Team,v1.2.0,EKS us-east-1,,CI-1079,CHG0041,2026-01-05,Know Your Customer identity verification
